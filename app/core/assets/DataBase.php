@@ -1,6 +1,7 @@
 <?php  
 	class DataBase{
 		private $host 	= DB_HOST;
+		private $port 	= DB_PORT;
 		private $user 	= DB_USER;
 		private $pass   = DB_PASSWORD;
 		private $dbname = DB_NAME;
@@ -13,17 +14,18 @@
 		public function __construct(){
 			# Conexion config
 			# Data origin name
-			$dsn = $this->sdbm .':host=' . $this->host . ';dbname=' . $this->dbname;
+			$dsn = $this->sdbm .':host=' . $this->host;
+			$this->sdbm == "pgsql"? $dsn = $dsn . ';port=' . $this->port . ';dbname=' . $this->dbname : $dsn . ';dbname=' . $this->dbname;
+			
 			# PDO options
 			$option = array(
 				PDO::ATTR_PERSISTENT => true,
 				PDO::ATTR_ERRMODE 	 => PDO::ERRMODE_EXCEPTION
 			); 
-
 			try {
 				$this->dbh = new PDO($dsn, $this->user, $this->pass, $option);
 				# Spanish 
-				$this->dbh->exec('set names utf8');
+				//$this->dbh->exec('set names utf8');
 			} 
 			catch (PDOException $e){
 				$this->error = $e->getMessage();

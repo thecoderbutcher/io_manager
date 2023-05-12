@@ -5,7 +5,7 @@
 			parent::__construct();
 		}
 
-		public function index(){ 
+		public function index(){   
 			$this->view('index');  
 		}
 	}

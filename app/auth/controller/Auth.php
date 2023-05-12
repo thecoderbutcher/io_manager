@@ -14,20 +14,9 @@
 					$pass  = $_POST['user-password'];
 					$user  = $this->userModel->getByEmail($email);
 					
-					if(!empty($user) && password_verify($pass, $user->user_password)){
-						$_SESSION['username'] = "$user->user_name $user->user_lastname";
-						
-						$role_id = $user->role_id;
-						$_SESSION['role']  = $role_id;
-						switch ($role_id) {
-							case '1':
-								redirect('main');
-								break;
-							
-							default:
-							redirect('login');
-								break;
-						}
+					if(!empty($user) && password_verify($pass, $user->contrasena)){
+						$_SESSION['username'] = "$user->nombre $user->apellido";
+						redirect('main');
 					} 
 					else{ 
 						redirect('login');
