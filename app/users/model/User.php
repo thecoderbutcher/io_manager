@@ -9,7 +9,7 @@
 
 		public function getByEmail($email){
 			$email =  $this->db->deleteSpecialChars($email,'email'); 
-			$this->db->query('SELECT * FROM  empleados WHERE email = :email');
+			$this->db->query('SELECT * FROM  plataforma_upro.empleados WHERE email = :email');
 			$this->db->bind(':email', $email);
 
 			$response = $this->db->getRecord();

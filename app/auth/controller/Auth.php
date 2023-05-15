@@ -15,8 +15,10 @@
 					$user  = $this->userModel->getByEmail($email);
 					
 					if(!empty($user) && password_verify($pass, $user->contrasena)){
-						$_SESSION['username'] = "$user->nombre $user->apellido";
+						$_SESSION['username'] = "$user->nombres $user->apellido";
+						$_SESSION['rol'] = $user->rol_id;
 						redirect('main');
+						
 					} 
 					else{ 
 						redirect('login');

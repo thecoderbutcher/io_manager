@@ -3,7 +3,7 @@
         <ul class="nav justify-content-end">
             <li class="nav-item">
                 <a class="nav-link active" href="#">
-                    <img src="<?php echo URL_ROUTE;?>/media/system/images/default-user.png" width="45" alt="">
+                <?php echo $_SESSION['username']?> <img src="<?php echo URL_ROUTE;?>/media/system/images/default-user.png" width="45" alt="">
                 </a>
             </li>
         </ul>

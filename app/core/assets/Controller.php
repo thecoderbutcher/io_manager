@@ -16,7 +16,7 @@
 		# Load view
 		public function view($view, $param = []){
 			session_start();
-			require_once APP_ROUTE . '/main/view/components/header.php'; 
+			require_once APP_ROUTE . '/main/view/components/header.php';  
 
 			if(Controller::authenticated()){
 				if (file_exists('../app/'. $this->class  .'/view/' . $view . '.php')){
