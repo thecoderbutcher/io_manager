@@ -1,16 +1,16 @@
 <?php 
 
-	class Users extends Controller{
-		private $userModel;
+	class Areas extends Controller{
+		private $areaModel;
 
 		public function __construct(){
 			parent::__construct();
-			$this->userModel = $this->model('User');
+			$this->areaModel = $this->model('Area');
 		}
 
 		public function index(){
-			$users = $this->userModel->getUsers();
-			$param = ['users' => $users];
+			$areas = $this->areaModel->getAreas();
+			$param = ['areas' => $areas];
 			$this->view('index', $param);
 			
 		}

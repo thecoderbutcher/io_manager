@@ -5,7 +5,5 @@
 	require_once 'core/helpers/url.php';
 
 	# Autoload
-	spl_autoload_register(function($className){
-		require_once 'core/assets/' . $className . '.php';
-	}); 
+	spl_autoload_register(function($className){require_once 'core/assets/' . $className . '.php';}); 
 ?>

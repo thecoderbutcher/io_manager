@@ -17,14 +17,11 @@
 		}
 
 		public function userRecord($param){
-			$this->db->query('INSERT INTO user (user_nick, user_email, user_password)
-									 VALUES (:user_nick, :user_email, :user_password)');
-
+			$this->db->query('INSERT INTO user (user_nick, user_email, user_password) VALUES (:user_nick, :user_email, :user_password)');
 			# Link values
 			$this->db->bind(':user_nick', $param['user-nick']);
 			$this->db->bind(':user_email', $param['user-email']);
 			$this->db->bind(':user_password', $param['user-password']);
-
 			# Run
 			if($this->db->execute()){
 				return true;
@@ -32,5 +29,11 @@
 			else{
 				return false;
 			}
+		}
+
+		public function getUsers(){
+			$this->db->query('SELECT * FROM  plataforma_upro.empleados');
+			$response = $this->db->getRecords();
+			return $response;
 		}
 	}

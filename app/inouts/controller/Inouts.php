@@ -1,13 +1,17 @@
 <?php 
 
 	class Inouts extends Controller{
+		private $userModel;
 
 		public function __construct(){
 			parent::__construct();
+			$this->userModel = $this->model('User','users');
 		}
 
 		public function index(){
-            $this->view('index');  
+			$users = $this->userModel->getUsers();
+			$param = ['users' => $users];
+			$this->view('index', $param);
         }
 
 		public function create(){}
