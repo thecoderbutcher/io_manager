@@ -12,7 +12,7 @@
 	define('APP_ROUTE', dirname(dirname(dirname(__FILE__))));
 
 	# URL route
-	define('URL_ROUTE', 'http://localhost/vigilancia/'); # Put the url route of your site
+	define('URL_ROUTE', 'http://172.0.16.14/vigilancia/'); # Put the url route of your site
 
 	# Site name
 	define('SITENAME', 'Entradas - Salidas');  # Put the name of the site

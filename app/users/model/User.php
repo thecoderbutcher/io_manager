@@ -32,7 +32,10 @@
 		}
 
 		public function getUsers(){
-			$this->db->query('SELECT * FROM  plataforma_upro.empleados');
+			$this->db->query('SELECT  empleado.documento as "documento", empleado.apellido as "apellido", empleado.nombres as "nombres", empleado.telefono as "telefono", areas.nombre as "areas_nombre"
+								FROM  plataforma_upro.empleados empleado
+								JOIN plataforma_upro.areas areas on areas.id = empleado.area_id
+								order by apellido asc');
 			$response = $this->db->getRecords();
 			return $response;
 		}
