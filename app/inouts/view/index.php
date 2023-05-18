@@ -37,10 +37,10 @@
 							<td>$user->nombres</td>
 							<td class='text-center'>$user->telefono</td> 
 							<td>$user->areas_nombre</td>
-							<td class='text-center'><a href='javascript:void(0)' class='material-icons io-actions' id='registrar-entrada' data-doc='id='$user->documento'' data-bs-toggle='tooltip' data-bs-placement='bottom' title='Registrar entrada'>login</a></td>
+							<td class='text-center'><button class='io-actions btn btn-primary' id='registrar-entrada' data-empleado='$user->documento' data-registrador='$_SESSION[userdoc]'data-url='".URL_ROUTE."Inouts/' data-action='registrarEntrada' data-status='0' data-bs-toggle='tooltip' data-bs-placement='bottom' title='Registrar entrada'>Entrada <span class='material-icons'>login</span></button></td>
 							<td class='text-center'><span class='material-icons' data-bs-toggle='tooltip' data-bs-placement='bottom' title='Agregar observaciones'>post_add</span></td>
 						</tr> 
-					";
+					"; //Data status 0 para cuando no se ha registrado entrada, != 0 para cuando se debe registrar salida, de este modo modificamos la tabla con el id status que se debe registrar al registrar una entrada
 				}
 			?>
         </tbody>

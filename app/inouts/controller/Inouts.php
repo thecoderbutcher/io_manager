@@ -14,6 +14,13 @@
 			$this->view('index', $param);
         }
 
+		public function registrarEntrada(){
+			echo "entrai";
+		}
+	
+		public function registrarSalida(){
+			echo "salis";
+		}
 		public function create(){}
 
 		public function store(){}

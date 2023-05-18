@@ -17,6 +17,7 @@
 					if(!empty($user) && password_verify($pass, $user->contrasena)){
 						$_SESSION['username'] = "$user->nombres $user->apellido";
 						$_SESSION['rol'] = $user->rol_id;
+						$_SESSION['userdoc'] = $user->documento;
 						redirect('main');
 						
 					} 
