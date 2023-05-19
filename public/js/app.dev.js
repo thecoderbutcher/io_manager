@@ -8,7 +8,7 @@ const registerIO = () => {
             empleado = action.getAttribute('data-empleado')
             registrador = action.getAttribute('data-registrador')
             actionStatus = action.getAttribute('data-status')
-
+            console.log(empleado)
             axios({
                 method: 'post',
                 url: url,
@@ -21,7 +21,6 @@ const registerIO = () => {
             .then(function(response){
                 console.log(response)
             })
-            
             if(e.target.id == "registrar-entrada"){
                 e.target.id = "registrar-salida"
                 e.target.title = "Registrar salida"

@@ -2,10 +2,12 @@
 
 	class Inouts extends Controller{
 		private $userModel;
+		private $inoutModel;
 
 		public function __construct(){
 			parent::__construct();
-			$this->userModel = $this->model('User','users');
+			$this->userModel  = $this->model('User','users');
+			$this->inoutModel = $this->model('Inout','inouts');
 		}
 
 		public function index(){
@@ -15,7 +17,14 @@
         }
 
 		public function registrarEntrada(){
-			echo "entrai";
+			$_POST = json_decode(file_get_contents("php://input") , true);
+
+			$param = [
+				'empleado' => $_POST['empleado'],
+				'seguridad' => $_POST['registrador']
+			];
+
+			return $this->inoutModel->registroEntrada($param);
 		}
 	
 		public function registrarSalida(){
