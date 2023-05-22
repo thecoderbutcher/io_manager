@@ -19,12 +19,17 @@
 		public function registrarEntrada(){
 			$_POST = json_decode(file_get_contents("php://input") , true);
 
+			$empleado_id  = $this->userModel->getUserId(intval($_POST['empleado']));
+			$seguridad_id = $this->userModel->getUserId(intval($_POST['registrador']));
+			
 			$param = [
-				'empleado' => $_POST['empleado'],
-				'seguridad' => $_POST['registrador']
+				'empleado'    => $empleado_id->id,
+				'registrador' => $seguridad_id->id
 			];
 
-			return $this->inoutModel->registroEntrada($param);
+			$param['fecha'] = $this->inoutModel->registroEntrada($param);
+
+			echo (var_dump($this->inoutModel->getRegistroEntradaId($param)));
 		}
 	
 		public function registrarSalida(){

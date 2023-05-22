@@ -39,4 +39,11 @@
 			$response = $this->db->getRecords();
 			return $response;
 		}
+
+		public function getUserId($documento){
+			$this->db->query('SELECT empleado.id, empleado.documento FROM plataforma_upro.empleados empleado WHERE empleado.documento = :documento');
+			$this->db->bind(':documento', $documento);
+			
+			return $this->db->getRecord();
+		}
 	}
