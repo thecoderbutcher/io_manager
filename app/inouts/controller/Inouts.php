@@ -18,23 +18,36 @@
 
 		public function registrarEntrada(){
 			$_POST = json_decode(file_get_contents("php://input") , true);
-
-			$empleado_id  = $this->userModel->getUserId(intval($_POST['empleado']));
-			$seguridad_id = $this->userModel->getUserId(intval($_POST['registrador']));
 			
 			$param = [
-				'empleado'    => $empleado_id->id,
-				'registrador' => $seguridad_id->id
+				'empleado'    => $this->userModel->getUserId(intval($_POST['empleado'])),
+				'registrador' => $this->userModel->getUserId(intval($_POST['registrador']))
 			];
 
-			$param['fecha'] = $this->inoutModel->registroEntrada($param);
-
-			echo (var_dump($this->inoutModel->getRegistroEntradaId($param)));
+			$param['fecha']      = $this->inoutModel->registroEntrada($param);
+			$param['id_entrada'] = $this->inoutModel->getRegistroEntradaId($param);
+			
+			$this->inoutModel->changeStatus($param);
+			
+			echo $param['id_entrada'];
 		}
 	
 		public function registrarSalida(){
-			echo "salis";
+			$_POST = json_decode(file_get_contents("php://input") , true);
+			
+			$param = [
+				'empleado'    => $this->userModel->getUserId(intval($_POST['empleado'])),
+				'registrador' => $this->userModel->getUserId(intval($_POST['registrador'])),
+				'id_entrada'  => intval($_POST['dataStatus'])
+			];			
+			$this->inoutModel->registroSalida($param);
+
+			$param['id_entrada'] =  0;
+			$this->inoutModel->changeStatus($param);
+			
+			echo "salidita";
 		}
+
 		public function create(){}
 
 		public function store(){}

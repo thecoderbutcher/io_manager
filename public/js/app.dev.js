@@ -4,23 +4,26 @@ const registerIO = () => {
 
     actions.forEach((action) => {
         action.addEventListener('click', function(e){  
+            
             url = action.getAttribute('data-url') + action.getAttribute('data-action')
             empleado = action.getAttribute('data-empleado')
             registrador = action.getAttribute('data-registrador')
-            actionStatus = action.getAttribute('data-status')
-            console.log(empleado)
+            dataStatus = action.getAttribute('data-status') 
+            console.log(url)
             axios({
                 method: 'post',
                 url: url,
                 data: {
                     empleado: empleado,
                     registrador: registrador,
-                    actionStatus: actionStatus
+                    dataStatus: dataStatus
                 }
             })
             .then(function(response){
+                action.setAttribute('data-status',response.data) 
                 console.log(response)
             })
+
             if(e.target.id == "registrar-entrada"){
                 e.target.id = "registrar-salida"
                 e.target.title = "Registrar salida"

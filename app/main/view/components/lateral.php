@@ -1,6 +1,6 @@
 <div class="row mt-3">
     <div class="col-12">
-        <p id="logo-title"><img src="<?php echo URL_ROUTE ?>/media/system/icons/logo.png" />PLATAFORMA UPRO</p>
+        <h1 id="logo-title"><img src="<?php echo URL_ROUTE ?>/media/system/icons/logo.png" /> UPRO</h1>
     </div>
     <div class="col-12 mt-2" id="lateral-header">
         <div class="btn-group" role="group"">
