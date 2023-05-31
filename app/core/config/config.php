@@ -2,7 +2,7 @@
 
 	#Data base access config
 	define('DB_MANAGEMENT', 'pgsql');		     # Put the system data base management to use
-	define('DB_HOST', '10.18.120.24'); 	 		 	 # Put the name of the host
+	define('DB_HOST', '10.18.120.23'); 	 		 	 # Put the name of the host
 	define('DB_PORT','5432');					 # Put the port if you use postgresql
 	define('DB_USER', 'postgres'); 	 		 		 # Put the username
 	define('DB_PASSWORD', 'poimnbqaz.,'); 					 # Put the password

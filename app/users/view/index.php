@@ -14,7 +14,7 @@
     
 </div>
 <div class="col-12" id="dashboard-principal">
-    <table class="table table-striped">
+    <table class="table table-striped" id="users-table">
         <thead>
             <tr>
                 <th scope="col">DNI</th>
@@ -27,6 +27,7 @@
         </thead>
         <tbody>
 			<?php
+                require_once APP_ROUTE . '/users/view/create-user-modal.php';
 				$users = $param['users']; 
 				foreach ($users as $user){
 					echo "
@@ -40,7 +41,7 @@
 						</tr> 
 					";
 				}
-                require_once APP_ROUTE . '/users/view/create-user-modal.php';
+                
 			?>
         </tbody>
     </table>

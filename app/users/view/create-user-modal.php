@@ -6,52 +6,60 @@
                 <h5 class="modal-title" id="staticBackdropLabel">Agregar empleado</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
-            <div class="modal-body">
-                <form action="post">
+            <form action="post" name="agregar-empleado" data-url="<?php echo URL_ROUTE ?>users/store" >
+                <div class="modal-body">
                     <div class="form-floating mb-3">
-                        <input type="text" class="form-control" id="in-apellidos" placeholder="Ingresar apellidos">
+                        <input type="text" name="apellido" class="form-control" id="in-apellidos" placeholder="Ingresar apellidos" >
                         <label for="floatingInput">Apellidos</label>
                     </div>
                     <div class="form-floating mb-3">
-                        <input type="text" class="form-control" id="in-nombres" placeholder="Ingresar nombres">
+                        <input type="text" name="nombres" class="form-control" id="in-nombres" placeholder="Ingresar nombres" >
                         <label for="floatingInput">Nombres</label>
                     </div>
                     <div class="form-floating mb-3">
-                        <input type="text" class="form-control" id="in-documento" placeholder="Ingresar documento">
+                        <input type="text" name="documento" class="form-control" id="in-documento" placeholder="Ingresar documento" >
                         <label for="floatingInput">Nº Documento</label>
                     </div>
                     <div class="form-floating mb-3">
-                        <input type="email" class="form-control" id="in-email" placeholder="Ingresar email">
+                        <input type="email" name="email" class="form-control" id="in-email" placeholder="Ingresar email" >
                         <label for="floatingInput">ejemplo@mail.com</label>
                     </div>
                     <div class="form-floating mb-3">
-                        <input type="text" class="form-control" id="in-telefono" placeholder="Ingresar telefono">
+                        <input type="text" name="telefono" class="form-control" id="in-telefono" placeholder="Ingresar telefono" >
                         <label for="floatingInput">Teléfono</label>
                     </div>
                     <div class="form-floating mb-3">
-                        <select class="form-select" aria-label="Default select example">
+                        <select name="area" class="form-select" aria-label="Default select example">
                             <option selected disabled>Seleccionar area</option>
-                            <option value="1">Uno</option>
-                            <option value="2">Dos</option>
-                            <option value="3">Tres</option>
+                            <?php 
+                                foreach($param['areas'] as $area){
+                                    echo "
+                                        <option value='$area->id'>$area->nombre</option>
+                                    ";
+                                }
+                            ?>
                         </select>
                         <label for="floatingInput">Area</label>
                     </div>
                     <div class="form-floating mb-3">
-                        <select class="form-select" aria-label="Default select example">
+                        <select name="rol" class="form-select" aria-label="Default select example">
                             <option selected disabled>Seleccionar rol</option>
-                            <option value="1">Uno</option>
-                            <option value="2">Dos</option>
-                            <option value="3">Tres</option>
+                            <?php 
+                                foreach($param['roles'] as $rol){
+                                    echo "
+                                        <option value='$rol->id'>$rol->nombre</option>
+                                    ";
+                                }
+                            ?>
                         </select>
                         <label for="floatingInput">Rol</label>
                     </div>
-                </form>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-                <button type="button" class="btn btn-primary">Comprendido</button>
-            </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                    <button type="submit" class="btn btn-primary" data-dismiss="modal" id="save-user" name="save-user">Guardar</button>
+                </div>
+            </form>
         </div>
     </div>
 </div>
