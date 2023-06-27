@@ -45,7 +45,7 @@
 			$param['id_entrada'] =  0;
 			$this->inoutModel->changeStatus($param);
 			
-			echo "salidita";
+			echo 0;
 		}
 
 		public function create(){}

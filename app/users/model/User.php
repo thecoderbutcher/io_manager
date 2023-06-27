@@ -64,4 +64,15 @@
 
 			return $this->db->execute();
 		}
+
+		public function searchUser($param){
+			$this->db->query("
+				SELECT empleado.documento, empleado.apellido, empleado.nombres, empleado.email, empleado.telefono, empleado.status, areas.nombre as area
+				FROM plataforma_upro.empleados empleado
+				JOIN plataforma_upro.areas areas on areas.id = empleado.area_id
+				WHERE empleado.documento ILIKE '%' || :value || '%' OR empleado.apellido ILIKE '%' || :value || '%' OR empleado.nombres ILIKE '%' || :value || '%'
+			");
+			$this->db->bind(':value', $param); 
+			return $this->db->getRecords(); 
+		}
 	}

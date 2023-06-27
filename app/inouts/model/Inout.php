@@ -19,7 +19,7 @@
                 if($this->db->execute()){ return $fecha; }
             }
         }
-
+        
         public function getRegistroEntradaId($param){
             if(isset($param)){
                 $this->db->query('SELECT id FROM plataforma_upro.registros WHERE empleado_id = :empleado_id AND registrador_id = :registrador_id AND fecha_entrada = :fecha');

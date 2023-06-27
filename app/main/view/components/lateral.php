@@ -1,6 +1,6 @@
 <div class="row mt-3">
     <div class="col-12">
-        <h1 id="logo-title"><img src="<?php echo URL_ROUTE ?>/media/system/icons/logo.png" /> UPRO</h1>
+        <h1 id="logo-title"><img src="<?php echo URL_ROUTE ?>/media/system/icons/logo.png" /></h1>
     </div>
     <div class="col-12 mt-2" id="lateral-header">
         <div class="btn-group" role="group"">
@@ -13,53 +13,52 @@
     </div>
     <div class="col-12">
         <ul class="list-group" id="lateral-action">
-            <a href="<?php echo URL_ROUTE ?>main/index" class="active">
+            <a href="<?php echo URL_ROUTE ?>main/index" class="btn-lateral-action active">
                 <li class="list-group-item d-flex justify-content-between align-items-start">
-                    <div class="ms-2 me-auto"><span class="material-icons">home</span>Inicio
+                    <div class="ms-2 me-auto"><span class="material-icons">home</span><span class="option-text"> Inicio</span>
 
                     </div>
                 </li>
             </a>
-            <a href="<?php echo URL_ROUTE ?>users/index">
+            <a href="<?php echo URL_ROUTE ?>users/index" class="btn-lateral-action">
                 <li class="list-group-item d-flex justify-content-between align-items-start">
-                    <div class="ms-2 me-auto"><span class="material-icons">people_outline</span>Empleados
+                    <div class="ms-2 me-auto"><span class="material-icons">people_outline</span><span class="option-text"> Empleados</span>
                     </div>
-
                 </li>
             </a>
-            <a href="<?php echo URL_ROUTE ?>inouts/index">
+            <a href="<?php echo URL_ROUTE ?>inouts/index" class="btn-lateral-action">
                 <li class="list-group-item d-flex justify-content-between align-items-start">
-                    <div class="ms-2 me-auto"><span class="material-icons">filter_none</span>Entradas - Salidas</div>
+                    <div class="ms-2 me-auto"><span class="material-icons">sync_alt</span><span class="option-text"> Entradas - Salidas</span></div>
+                </li>
+            </a>
+            <!--<a href="<?php echo URL_ROUTE ?>elecciones/index">
+                <li class="list-group-item d-flex justify-content-between align-items-start">
+                    <div class="ms-2 me-auto"><span class="material-icons">cloud</span><span class="option-text"> Elecciones</span></div> 
                 </li>
             </a>
             <a href="">
                 <li class="list-group-item d-flex justify-content-between align-items-start">
-                    <div class="ms-2 me-auto"><span class="material-icons">cloud</span>Backup</div> 
+                    <div class="ms-2 me-auto"><span class="material-icons">support_agent</span><span class="option-text"> Soporte</span></div> 
                 </li>
             </a>
             <a href="">
                 <li class="list-group-item d-flex justify-content-between align-items-start">
-                    <div class="ms-2 me-auto"><span class="material-icons">support_agent</span>Soporte</div> 
+                    <div class="ms-2 me-auto"><span class="material-icons">security</span><span class="option-text"> Seguridad</span></div> 
                 </li>
             </a>
             <a href="">
                 <li class="list-group-item d-flex justify-content-between align-items-start">
-                    <div class="ms-2 me-auto"><span class="material-icons">security</span>Seguridad</div> 
+                    <div class="ms-2 me-auto"><span class="material-icons">settings</span><span class="option-text"> Ajustes</span></div> 
                 </li>
-            </a>
-            <a href="">
-                <li class="list-group-item d-flex justify-content-between align-items-start">
-                    <div class="ms-2 me-auto"><span class="material-icons">settings</span>Ajustes</div> 
-                </li>
-            </a>
+            </a>-->
         </ul>
     </div>
     <div class="col-12">
         <hr>
-        <div class="d-grid ap-2   mx-auto">
+        <div class="d-grid ap-2 mx-auto">
             <a href="<?php echo URL_ROUTE ?>/auth/logout" type="button" class="btn btn-secondary btn-sm">
                 <span class="material-icons">exit_to_app</span>
-                <span>Salir</span>
+                <span class="option-text">Salir</span>
             </a>
         </div>
     </div>
